@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</style>
+<script>
+$(document).ready(function (){
+$('#add').click(function() {
+           $("#register").append('<tr><td id="bg" contentEditable=true></td><td id="bg" contentEditable=true></td><td id="bg" contentEditable=true></td><td id="bg" contentEditable=true></td><td align="center"><button id="delete">Delete</button></td></tr>');
+     });
+
+$("#register").on('click','#delete',function(){
+    $(this).closest('tr').remove();
+      
+    });	
+});
+
+</script>
+
+<script>
+
+function sub(){
+alert("We will contact you asap");
+}
+
+var down,code;
+
+$(document).bind("keyup", function(e) {
+	code = e.keyCode || e.which;
+   	if(code == 18){
+		 $(down).css({"color": "","background-color": ""});
+	}
+});
+$(document).on("mouseenter keypress", "td#bg", function(e) {
+    if(e.altKey){
+		$(this).css({"color": "red","background-color": "blue"});
+		down = this;
+	}
+});
+$(document).on("mouseleave", "td#bg", function(e) {
+    $(this).css({"color": "","background-color": ""});
+});
+
+</script>
+</head>
+<body>
+<table id ="register" border="2" style="margin-top:50px;margin-left:50px;" align="center" width = "90%">
+<tr>
+<th colspan=4>
+Group Membership 
+</th>
+</tr>
+<tr>
+<td>
+First Name
+</td>
+<td>
+Last Name
+</td>
+<td>
+Email Address
+</td>
+<td>
+Telephone Number
+</td>
+</tr>
+</table>
+<br>
+<div align="center">
+<br>
+
+<br>
+<button id="add" onClick="addMember()">Add Row</button>
+<footer>
+<br>
+<form action="">
+<button id="add" onClick="sub()">Submit</button>
+</form>
+</footer>
+
+</div>
+</body>
+</html>
