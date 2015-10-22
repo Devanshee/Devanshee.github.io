@@ -1,5 +1,6 @@
 body
-{ 
+{
+background-color: pink;
 background-image: url('abc.gif');
 background-repeat: no-repeat;
 background-attachment: fixed;
@@ -34,7 +35,7 @@ top:0cm;
 }
 
 .fnt2{
-font-size:1.1em;
+font-size:1.2em;
 font-family:Constantia;
 }
 
@@ -91,8 +92,8 @@ z-index:20;
 }
 
 .divsub{
-height: 50px; 
-background-color: #324130;
+height: 60px; 
+background-color: #A2A30A;
 width:100%;
 }
 
