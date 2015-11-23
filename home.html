@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta name="description" content="Devanshee">
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8"> 
+	<meta name="keywords" content="Devanshee">
+	<meta name="author" content="Devanshee Purohit">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+<script>
+var y = document.getElementById('cp').value;
+function changetheme() {	
+	localStorage.cl = document.getElementById('cp').value;
+	if(document.getElementById('cp').value!=null){
+			document.getElementById("fnt1").style.color = document.getElementById('cp').value;
+	}
+}
+</script>
+<script>
+function validateForm() {
+    var x = document.forms["form1"]["Name"].value;
+    if (x == null || x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
+</script>
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script>
+var x = document.getElementById("description");
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    lat = position.coords.latitude;
+    lon = position.coords.longitude;
+    latlon = new google.maps.LatLng(lat, lon)
+    mapholder = document.getElementById('mapholder')
+    mapholder.style.height = '125px';
+    mapholder.style.width = '250px';
+
+    var myOptions = {
+    center:latlon,zoom:14,
+    mapTypeId:google.maps.MapTypeId.ROADMAP,
+    mapTypeControl:false,
+    navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+    }
+    var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
+    var marker = new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
+}
+
+function showError(error)
+  {
+  switch(error.code) 
+    {
+    case error.PERMISSION_DENIED:
+      x.innerHTML="User denied the request for Geolocation."
+      break;
+    case error.POSITION_UNAVAILABLE:
+      x.innerHTML="Location information is unavailable."
+      break;
+    case error.TIMEOUT:
+      x.innerHTML="The request to get user location timed out."
+      break;
+    case error.UNKNOWN_ERROR:
+      x.innerHTML="An unknown error occurred."
+      break;
+    }
+  }
+</script>
+<script>
+function sname() {
+	var e = document.getElementById('Name1').value;
+	localStorage.na =e;
+}
+</script>
+<script>
+function le(){
+	var ch=localStorage.na;
+	var co=	localStorage.cl;
+	if(ch!=null)
+	{
+		var v1="Hi ";
+		document.getElementById("hi").innerHTML=v1.concat(localStorage.na);
+	}
+	if(co!=null){
+		document.getElementById("fnt1").style.color = co;
+	}
+}
+</script>
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+
+<title>Devanshee Purohit</title>
+</head>
+
+<body id="color" link="#023A48" vlink="#2CA0AF" alink="#FF0000" onload="le()" style="background-image: url('images/bg1.jpg');">      
+<div style="padding-left=60px;">
+<!-- Navigation -->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><h3 id="head1" class="fnt2">Devanshee Purohit</h3></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="home.html">About Me</a>
+                    </li>
+					 <li>
+                        <a href="projects.html">Projects</a>
+                    </li>
+					<li>
+                        <a href="https://www.dropbox.com/s/zx3k1rr1ocdlad6/Resume-Devanshee_Purohit.pdf?dl=0">Resume</a>
+                    </li>
+                    <li>
+                        <a href="mailto:devanshee.purohit@gmail.com">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+		
+        <!-- /.container -->
+    </nav> 
+</br></br></br></br></br>
+
+</br>
+
+	<div id="trn" class="container">
+		<div class="col-sm-12">
+		  <div class="row">
+			<h1 id="head2" class="fnt">Expereince</h1>
+			<p align="center" class="fnt4">
+			Software Developer Intern: InterDigital Communication, King of Prussia, USA.                                                  (June, 2014 - Dec, 2014)
+			<div class="col-sm-12">
+			<ul>
+				<li>Open ID Protocol: Developed Web and Android application for login with a Single sign-on property using Java EE, JSP, Servlets, Android SDK, NDK, JavaScript and LDAP. Deployed Object database named DB4O.Worked on Arndale board using Trustonic API to provide kernel level security. Became familiar with Linux and bash scripting.</li>
+			</ul>
+			</div>
+			</p>
+			</div>
+		</div>
+
+	</div>
+</br>
+<div id= "trn" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3" style="padding-left:50px;">
+</br>
+
+<b><p class="fnt2" align="center">Leave a feedback</p></b>
+<form id="form1" onsubmit="return validateForm()" class="valigntop">
+
+<h4 id="fnt">Name:</br>
+<input id="txtbox" name="Name" type="text"/></br>
+Email:</br>
+<input id="txtbox" name="Email" type="email" /></br>
+
+Webpage(optional):</br>
+<input id="txtbox" type="url" name="homepage"></br>
+
+Technology Endorsement:</br>
+<input type="checkbox" name="like" value="Java">Programming(Java/C/C++)<br>
+<input type="checkbox" name="like" value="C/C++">Cloud Computing<br> 
+<input type="checkbox" name="like" value="Big Data">Big Data<br>
+<input type="checkbox" name="like" value="Web Technologies">Web Development<br> 
+
+Review:</br>
+<input type="radio" name="review" value="Positive" required>Positive<br>
+<input type="radio" name="review" value="Negative" required>Negative<br> 
+
+Rate Website:</br>
+1 <input type="range" name="Rating" min="1" max="5" required> 5 </br>
+<button onclick="sname()">Submit</Button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="reset">Reset</button>
+</br>
+</br>
+</form>
+<p id="mapholder"></p>
+<h4  id="head3">
+ click here &nbsp;<button onclick="getLocation()">location</button></h4>	
+</div>
+    
+<div class="col-sm-9">
+<section>
+<h2 id="head2" class="fnt">Education</h2>
+<div class="col-sm-12">
+
+
+  <div class="panel-group">
+    <div class="panel panel-primary">
+      <div class="panel-heading"><b>Masters of Science</b> in Computer Science </br>Graduation: Dec, 2015(Expected)</div>
+      <div class="panel-body">
+	  	<div class="list-group">
+				<p id="color" class="fnt2">
+				<a href="#" class="list-group-item" >
+				THE UNIVERSITY OF TEXAS AT DALLAS(USA)
+				--  GPA: 3.768/4.00
+				</a>				
+				Coursework: Big Data Management, Object Oriented Design, Cloud Computing, Statistics of Data Science, Advanced Operating Systems, Machine Learning, Discrete Structures, Database Design, Design and analysis of Algorithms, Advanced Computer Networks 
+				</p>
+			</div>
+	  </div>
+    </div>
+	</br>
+	<div class="panel panel-primary">
+      <div class="panel-heading"><b>Bachelor of Engineering</b> in Information Technology </br>Graduation: May, 2013</div>		
+      <div class="panel-body">
+	    	<div class="list-group">
+				<p id="color" class="fnt2">
+				<a href="#" class="list-group-item" >
+				L.D. COLLEGE OF ENGINEERING (GUJARAT TECHNOLOGICAL UNIVERSITY)(India)
+				--  CGPA: 7.94/10.00
+				</a>				
+				Coursework: Distributed System Management, E-commerce, Artificial Intelligence, Information Security, Web Programming Languages
+				</p>
+			</div>
+	  </div>
+	  </div>
+    </div>
+  </div>  
+</section>
+</div>
+<hr style="color:#324130">
+ 	
+
+ </div>
+</div>
+<br>
+<div class="container">
+	<div class="col-sm-8" id="trn">
+	  <div class="row">
+		<p align="center">
+		<h3 class="fnt2" id="head2">Technologies</h3>		
+			<ul>
+				<li>Programming skills : Java, C, C++</li>
+				<li>Scripting Languages : UNIX shell script, Python, JavaScript</li>
+				<li>Operating Systems : LINUX, Windows, Android, Cisco IOS</li>
+				<li>Database and Analysis Tools : MySQL, Hadoop Map-Reduce, Cassandra, Pig, Hive, Mahout, SQLite</li>
+				<li>Platforms : Eclipse, NetBeans IDE, Packet Tracer, Wireshark, AWS, Jetty Server</li>
+				<li>Web Technologies : JSP, Servlets, HTML 5, CSS, PHP, J2EE, jQuery, XML, AJAX</li>
+			</ul>
+			
+			</p>
+			</div>
+		</div>
+		<div class="col-sm-4">
+		<a href="home.html"><img src="images/collage.jpg"  Height="171px" Width="342px" usemap="#sn"></a>
+			<map name="sn" id="sn">
+			  <area shape="rect" coords="0,0,57,100" href="#" alt="Cappuccino">
+			  <area shape="rect" coords="57,0,114,100" href="#" alt="Frappe">
+			  <area shape="rect" coords="114,0,171,100" href="#" alt="Mocha">
+			  <area shape="rect" coords="100,0,150,100" href="#" alt="Mocha">
+			  <area shape="rect" coords="150,0,200,100" href="#" alt="About Coffee">
+			 <area shape="rect" coords="150,0,200,100" href="#" alt="About Coffee">
+			</map>
+		</div>
+</div>
+</div>
+</div>
+</div>
+<hr style="color:#324130">
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12" align="center">
+                    <ul class="list-inline">
+                        <li>
+                            Contact: 
+                        </li>
+                                    
+                        <li>
+                            <a href="mailto:devanshee.purohit@gmail.com">email me</a>
+                        </li>
+                    </ul>
+                    <p class="copyright">Created by Devanshee Purohit &copy;</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
