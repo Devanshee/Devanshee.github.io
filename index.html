@@ -15,10 +15,7 @@
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 <script>
 var cnt = 0;
-document.onload(){
-	cnt++;
-	alert(cnt);
-}
+document.ready(cnt++,{alert(cnt)})
 var y = document.getElementById('cp').value;
 function changetheme() {	
 	localStorage.cl = document.getElementById('cp').value;
