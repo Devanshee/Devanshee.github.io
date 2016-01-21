@@ -1,4 +1,4 @@
-body
+﻿body
 {
 <--background-image: url("images/dp.JPG");
 <--background-color: #DDDDFF; 
@@ -92,8 +92,8 @@ border:0px;
 }
 
 #trn{
-    background-color: #1A66A1; 
-    background-color: rgba(110,130,170,0.8);
+    background-color: #328897; 
+    background-color: rgba(50,136,151,0.8);
 	color: #FFFFFF;
 }
 
